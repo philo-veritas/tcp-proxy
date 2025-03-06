@@ -1,0 +1,4 @@
+port_mappings:
+  "3307": "db1.example.com:3306"
+  "3308": "db2.example.com:3306"
+  "3309": "db3.example.com:3306"
