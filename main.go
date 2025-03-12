@@ -46,7 +46,7 @@ func handleConnection(clientConn net.Conn, targetAddr string) {
 		return
 	}
 	defer func(serverConn net.Conn) {
-		err := serverConn.Close()
+		err = serverConn.Close()
 		if err != nil {
 			log.Println("关闭服务器连接失败:", err)
 		} else {
@@ -56,7 +56,7 @@ func handleConnection(clientConn net.Conn, targetAddr string) {
 
 	// 开启双向数据转发
 	go func() {
-		_, err := io.Copy(serverConn, clientConn)
+		_, err = io.Copy(serverConn, clientConn)
 		if err != nil {
 			log.Println("#1 数据转发失败:", err)
 			return
